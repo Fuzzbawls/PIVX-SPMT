@@ -7,5 +7,13 @@
 /__pycache__/
 /lastLogs.html
 /masternode.conf
-/venv/
+/venv*/
 /.pytest_cache/
+
+# Ignore build artifacts
+/SPMT-*
+/*.zip
+/*.exe
+/*.tar.gz
+/*.dmg
+/*.app
