@@ -171,7 +171,7 @@ class TabGovernance():
         self.ui.proposalBox.setSortingEnabled(True)
         self.ui.proposalBox.sortByColumn(3, Qt.DescendingOrder)
 
-    def loadProposals_thread(self, ctrl):
+    def loadProposals_thread(self):
         if not self.caller.rpcConnected:
             printException(getCallerName(), getFunctionName(), "RPC server not connected", "")
             return
@@ -274,7 +274,7 @@ class TabGovernance():
             for v in myVotes:
                 self.caller.parent.db.addMyVote(v[0], prop.Hash, v[1])
 
-    def updateMyVotes_thread(self, ctrl):
+    def updateMyVotes_thread(self):
         self.updateMyVotes()
 
     def updateSelectedMNlabel(self):
@@ -306,7 +306,7 @@ class TabGovernance():
             serialize_for_sig += hash + str(vote_code) + str(sig_time)
             return serialize_for_sig
 
-    def vote_thread(self, ctrl, vote_code):
+    def vote_thread(self, vote_code):
         # vote_code index for ["yes", "abstain", "no"]
         if not isinstance(vote_code, int) or vote_code not in range(3):
             raise Exception("Wrong vote_code %s" % str(vote_code))

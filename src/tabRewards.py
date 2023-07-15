@@ -171,7 +171,7 @@ class TabRewards:
 
         self.onChangeSelectedMN(isInitializing)
 
-    def load_utxos_thread(self, ctrl):
+    def load_utxos_thread(self):
         with self.Lock:
             # clear rewards DB
             printDbg("Updating rewards...")
@@ -489,7 +489,7 @@ class TabRewards:
         self.ui.loadingLinePercent.setValue(percent)
         QApplication.processEvents()
 
-    def updateSelection(self, clicked_item=None):
+    def updateSelection(self):
         total = 0
         self.selectedRewards = self.getSelection()
         numOfInputs = len(self.selectedRewards)

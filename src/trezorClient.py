@@ -293,7 +293,7 @@ class TrezorApi(QObject):
         ThreadFuns.runInThread(self.signMessageSign, (path, message, isTestnet), self.signMessageFinish)
 
     @process_trezor_exceptions
-    def signMessageSign(self, ctrl, path, mess, isTestnet):
+    def signMessageSign(self, path, mess, isTestnet):
         self.signature = None
         if isTestnet:
             hw_coin = "PIVX Testnet"
@@ -314,7 +314,7 @@ class TrezorApi(QObject):
             self.sig1done.emit(self.signature.hex())
 
     @process_trezor_exceptions
-    def signTxSign(self, ctrl, inputs, outputs, txes, isTestnet=False):
+    def signTxSign(self, inputs, outputs, txes, isTestnet=False):
         self.tx_raw = None
         if isTestnet:
             hw_coin = "PIVX Testnet"
@@ -490,7 +490,7 @@ class TrezorUi(object):
             raise exceptions.Cancelled
         return passphrase
 
-    def button_request(self, msg_code):
+    def button_request(self):
         if not self.prompt_shown:
             pass
 

@@ -56,7 +56,7 @@ class BudgetProjection_dlg(QDialog):
             self.ui.proposals_lst.setItem(row, 2, item(self.projection[row].get('Votes')))
             self.ui.proposals_lst.setItem(row, 3, item(self.projection[row].get('Total_Allotted')))
 
-    def loadBudgetProjection_thread(self, ctrl):
+    def loadBudgetProjection_thread(self):
         self.projection = []
         if not self.main_wnd.caller.rpcConnected:
             printException(getCallerName(), getFunctionName(), "RPC server not connected", "")

@@ -46,7 +46,7 @@ class TabMNConf:
             return None
         self.runInThread(self.findSpath, (0, 10), self.findSpath_done)
 
-    def findSpath(self, ctrl, starting_spath, spath_count):
+    def findSpath(self, starting_spath, spath_count):
         currAddr = self.ui.edt_address.text().strip()
         currHwAcc = self.ui.edt_hwAccount.value()
         # first scan. Subsequent called by findSpath_done

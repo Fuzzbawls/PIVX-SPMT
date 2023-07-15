@@ -59,7 +59,7 @@ class FindCollTx_dlg(QDialog):
             self.lblMessage.setText('<b style="color:purple">No UTXO found for current address.\nEnter tx manually</b>')
             self.lblMessage.setVisible(True)
 
-    def load_utxos_thread(self, ctrl):
+    def load_utxos_thread(self):
         try:
             if not self.mainTab.caller.rpcClient.getStatus():
                 printDbg('PIVX daemon not connected')

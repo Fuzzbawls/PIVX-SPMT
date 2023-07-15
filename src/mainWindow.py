@@ -306,7 +306,7 @@ class MainWindow(QWidget):
         self.versionLabel.setText("--")
         self.runInThread(self.checkVersion, (), self.updateVersion)
 
-    def checkVersion(self, ctrl):
+    def checkVersion(self):
         local_version = self.parent.version['number'].split('.')
         self.gitVersion = getRemoteSPMTversion()
         remote_version = self.gitVersion.split('.')
@@ -414,7 +414,7 @@ class MainWindow(QWidget):
             self.header.hwLed.setPixmap(self.ledGrayH_icon)
         self.header.hwLed.setToolTip(self.hwStatusMess)
 
-    def updateHWstatus(self, ctrl):
+    def updateHWstatus(self):
         # re-initialize device
         try:
             self.hwdevice.initDevice(self.header.hwDevices.currentIndex())
@@ -506,7 +506,7 @@ class MainWindow(QWidget):
         # reload servers in configure dialog
         self.sig_RPClistReloaded.emit()
 
-    def updateRPCstatus(self, ctrl, fDebug=False):
+    def updateRPCstatus(self, fDebug=False):
         rpc_index, rpc_protocol, rpc_host, rpc_user, rpc_password = self.getRPCserver()
         if fDebug:
             printDbg("Trying to connect to RPC %s://%s..." % (rpc_protocol, rpc_host))

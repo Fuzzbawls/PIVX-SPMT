@@ -118,7 +118,7 @@ class TabSign:
             return
         self.updateGenericAddress(pk)
 
-    def findSpath(self, ctrl, starting_spath, spath_count):
+    def findSpath(self, starting_spath, spath_count):
         addy = self.ui.addressLineEdit.text().strip()
         device = self.main_wnd.hwdevice
         self.spath_found, self.spath = device.scanForBip32(self.hwAcc, addy, starting_spath, spath_count,

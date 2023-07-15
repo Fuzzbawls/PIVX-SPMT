@@ -66,7 +66,7 @@ def appendMasternode(mainWnd, mn):
     printDbg("saved")
 
 
-def checkRPCstring(urlstring, action_msg="Malformed credentials"):
+def checkRPCstring(urlstring):
     try:
         o = urlparse(urlstring)
         if o.scheme is None or o.scheme == '':

@@ -33,6 +33,7 @@ jobs:
           lint/lint-python.sh
           lint/lint-python-mutable-default-parameters.sh
           lint/lint-python-utf8-encoding.sh
+          lint/lint-python-dead-code.sh
 
   build:
     name: Build-${{ matrix.config.name }}

@@ -289,7 +289,7 @@ class LedgerApi(QObject):
         ThreadFuns.runInThread(self.signMessageSign, (), self.signMessageFinish)
 
     @process_ledger_exceptions
-    def signMessageSign(self, ctrl):
+    def signMessageSign(self):
         self.signature = None
         with self.lock:
             try:
@@ -332,7 +332,7 @@ class LedgerApi(QObject):
         self.sig1done.emit(sig1)
 
     @process_ledger_exceptions
-    def signTxSign(self, ctrl):
+    def signTxSign(self):
         self.tx_raw = None
         with self.lock:
             starting = True

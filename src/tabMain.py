@@ -285,5 +285,5 @@ class TabMain:
             self.masternodeToStart.startMessage(self.caller.hwdevice, self.caller.rpcClient)
             # wait for signal when masternode.work is ready then ---> sendBroadcast
 
-    def updateAllMasternodes_thread(self, ctrl):
+    def updateAllMasternodes_thread(self):
         self.all_masternodes = self.caller.rpcClient.getMasternodes()
