@@ -69,7 +69,6 @@ DefaultCache = {
 }
 
 trusted_RPC_Servers = [
-    ["https", "lithuania.fuzzbawls.pw:8080", "spmtUser", "WUss6sr8956S5Paex254"],
     ["https", "latvia.fuzzbawls.pw:8080", "spmtUser", "8X88u7TuefPm7mQaJY52"],
     ["https", "charlotte.fuzzbawls.pw:8080", "spmtUser", "ZyD936tm9dvqmMP8A777"]]
 
